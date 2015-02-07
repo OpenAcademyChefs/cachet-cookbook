@@ -1,0 +1,9 @@
+<?php
+
+return [
+    'DB_DRIVER'   => <%= node['cachet']['database']['driver'] %>,
+    'DB_HOST'     => '127.0.0.1',
+    'DB_DATABASE' => <%= node['cachet']['database']['dbname'] %>,
+    'DB_USERNAME' => <%= node['cachet']['database']['username'] %>,
+    'DB_PASSWORD' => <%= node['cachet']['database']['password'] %>,
+];

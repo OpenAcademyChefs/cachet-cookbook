@@ -1,0 +1,15 @@
+<VirtualHost *:80>
+    ServerName <%= @params[:server_name] %>
+    <% if @params[:server_aliases] -%>
+    ServerAlias <%= @params[:server_aliases].join " " %>
+    <% end -%>
+    DocumentRoot <%= @params[:docroot] %>
+
+    <Directory "<%= @params[:docroot] %>">
+        Require all granted # Used by Apache 2.4
+        Options Indexes FollowSymLinks
+        AllowOverride All
+        Order allow,deny
+        Allow from all
+    </Directory>
+</VirtualHost>
